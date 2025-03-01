@@ -1,0 +1,45 @@
+﻿<?php
+// Check if the user is already logged in
+if (isset($_SESSION['username'])) {
+  header('Location: dashboard.php');
+  exit;
+}
+
+// Define the database connection
+$conn = mysqli_connect("localhost", "username", "password", "database");
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Define the login form
+if (isset($_POST['login'])) {
+  // Get the username and password from the form
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  // Check if the username and password are correct
+  $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+  $result = mysqli_query($conn, $query);
+
+  if (mysqli_num_rows($result) > 0) {
+    // Log the user in
+    $_SESSION['username'] = $username;
+    header('Location: dashboard.php');
+    exit;
+  } else {
+    // Display an error message
+    echo 'Invalid username or password';
+  }
+}
+
+// Display the login form
+?>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+  <input type="submit" name="login" value="Login">
+</form>

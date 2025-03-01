@@ -1,0 +1,52 @@
+﻿<?php
+// Check if the user is already logged in
+if (isset($_SESSION['username'])) {
+  header('Location: dashboard.php');
+  exit;
+}
+
+// Define the database connection
+$conn = mysqli_connect("localhost", "username", "password", "database");
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Define the register form
+if (isset($_POST['register'])) {
+  // Get the username, email, and password from the form
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  // Check if the username and email are already taken
+  $query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
+  $result = mysqli_query($conn, $query);
+
+  if (mysqli_num_rows($result) > 0) {
+    // Display an error message
+    echo 'Username or email already taken';
+  } else {
+    // Insert the new user into the database
+    $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+    mysqli_query($conn, $query);
+
+    // Log the user in
+    $_SESSION['username'] = $username;
+    header('Location: dashboard.php');
+    exit;
+  }
+}
+
+// Display the register form
+?>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username"><br><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+  <input type="submit" name="register" value="Register">
+</form>
