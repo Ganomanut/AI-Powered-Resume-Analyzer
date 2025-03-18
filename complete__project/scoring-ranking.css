@@ -1,0 +1,241 @@
+/* scoring-ranking.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar .logo img{
+    width: 50px;
+    height: 50px;
+}
+.logo h2{
+    margin-left: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -50px;
+}
+.navbar {
+    background: #007bff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.search-bar {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    height: 40px;
+}
+
+input[type="text"] {
+    width: 50%;
+}
+
+.search-bar:focus {
+    border-color: #0056b3;
+}
+/* Global Styles */
+body {
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Darker text for readability */
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px; /* Limit container width for larger screens */
+    margin: 40px auto; /* Increased margin for better spacing */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+}
+
+h1, h2, h3 {
+    color: #2c3e50; /* Darker heading color */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    padding-top: 50px;
+}
+
+h2 {
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    border: 1px solid #ecf0f1;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: #fefefe;
+}
+
+/* Specific Styles */
+.score-item, .rank-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    font-size: 1em;
+}
+
+button {
+    background-color: #3498db; /* Blue button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.weightage-customization {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.weightage-customization label, .weightage-customization input {
+    width: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    .score-item, .rank-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    input[type="number"] {
+        width: calc(100% - 10px);
+    }
+}
+
+/* Animation */
+.score-item span, .rank-item span {
+    transition: color 0.5s ease-in-out;
+    font-weight: bold;
+    color: #3498db; /* Blue color for score values */
+}
+footer.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto; /* Push footer to the bottom */
+    width: 100%;
+}
+
+.footer__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer__column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__column li {
+    margin-bottom: 5px;
+}
+
+.footer__column a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer__column a:hover {
+    color: white;
+}
+
+.footer__bottom {
+    text-align: center;
+    margin-top: 20px;
+    width: 80%;
+    margin: 20px auto 0 auto;
+}
