@@ -1,3 +1,3 @@
-# AI Powered Resume Analyzer a Web_based App 
-Developed by Students from University of Juba.
-Enjoy Resume Screening App With Python and Machine Learning 
+# Name :James Dut Mathok
+Index : 18-CIT-060
+This model is capable of extracting the features of wildlife 
