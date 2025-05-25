@@ -6,12 +6,15 @@
   <meta name="description" content="AI Powered Resume Analyzer Project Overview"/>
   <title>AI Powered Resume Analyzer</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #e6f0ff;
       color: #00264d;
+      display: flex;
+      flex-direction: column;
     }
     header, section {
       padding: 40px 80px;
@@ -37,9 +40,16 @@
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 51, 102, 0.1);
       max-width: 1000px;
+      flex: 1;
     }
     h2 {
       color: #003366;
+    }
+    footer {
+      background: linear-gradient(to right, #003366, #0059b3);
+      color: #ffffff;
+      padding: 20px 40px;
+      width: 100%;
     }
   </style>
 </head>
@@ -58,7 +68,7 @@
     </p>
   </section>
 
-  <footer style="background: linear-gradient(to right, #003366, #0059b3); color: #ffffff; padding: 20px 40px; border-radius: 16px 16px 0 0; margin-top: 40px;">
+  <footer>
     <hr style="margin: 16px 0; border-color: #66a3ff;" />
     <p style="text-align: center; font-size: 13px;">&copy; 2025 University of Juba. Developed by Fourth Year CS & IT Students.</p>
   </footer>
