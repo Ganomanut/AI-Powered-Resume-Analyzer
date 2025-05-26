@@ -14,9 +14,11 @@
       color: #00264d;
       font-size: 16px;
     }
+
     header, section, footer {
       padding: 20px 40px;
     }
+
     header {
       background: linear-gradient(to right, #004080, #0073e6);
       color: #fff;
@@ -24,22 +26,27 @@
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
       border-radius: 0 0 16px 16px;
     }
+
     header .subtitle {
       font-size: 16px;
       margin: 4px 0;
     }
+
     h1 {
       font-size: 24px;
       margin: 10px 0;
     }
+
     h2 {
       font-size: 20px;
       margin-bottom: 8px;
     }
+
     h3 {
       font-size: 16px;
       margin-bottom: 6px;
     }
+
     nav a {
       color: #b3e0ff;
       margin: 0 6px;
@@ -47,15 +54,18 @@
       font-weight: 600;
       font-size: 13px;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     nav a.active {
       color: #fff;
       background: #0073e6;
       border-radius: 6px;
       padding: 2px 6px;
     }
+
     section {
       background-color: #ffffff;
       margin: 16px auto;
@@ -63,6 +73,7 @@
       box-shadow: 0 3px 10px rgba(0, 51, 102, 0.1);
       max-width: 1000px;
     }
+
     img {
       display: block;
       height: auto;
@@ -71,13 +82,16 @@
       margin: 16px auto;
       max-width: 100%;
     }
+
     .logo-img {
       max-width: 80px;
       margin-bottom: 8px;
     }
+
     .half-size {
       max-width: 50%;
     }
+
     pre {
       background: #d9e6f2;
       padding: 10px;
@@ -86,21 +100,35 @@
       border-radius: 8px;
       font-size: 12px;
     }
+
     iframe.square {
-      width: 560px;
-      height: 315px;
+      width: 100%;
+      height: 400px;
       border: none;
       border-radius: 12px;
       margin: 16px auto;
       display: block;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
+
     ul {
       padding-left: 18px;
     }
+
     ul li {
       margin-bottom: 6px;
     }
+
+    .github-badge {
+      display: inline-block;
+      padding: 3px 6px;
+      font-size: 11px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 3px;
+      margin-left: 6px;
+    }
+
     footer {
       background-color: #004080;
       color: #fff;
@@ -108,35 +136,54 @@
       text-align: left;
       border-radius: 16px 16px 0 0;
     }
+
     footer a {
       color: #b3e0ff;
       text-decoration: none;
       font-size: 13px;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
+
     footer hr {
       margin: 16px 0;
       border-color: #0073e6;
     }
+
     footer h3 {
       font-size: 16px;
       margin-top: 0;
     }
+
     footer p {
       margin: 4px 0;
       font-size: 13px;
     }
+
     @media (max-width: 600px) {
       header, section, footer {
         padding: 12px 20px;
       }
+
       iframe.square {
         width: 90%;
         height: auto;
         aspect-ratio: 1 / 1;
       }
+    }
+
+    /* Slide-in Animation */
+    .slide-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    .slide-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -160,7 +207,7 @@
     </nav>
   </header>
 
-  <section>
+  <section class="slide-in">
     <h2>Abstract</h2>
     <p>
       This AI-powered resume analyzer parses resumes, extracts structured information, and evaluates job-fit based on NLP techniques and deep learning.
@@ -168,7 +215,7 @@
     </p>
   </section>
 
-  <section>
+  <section class="slide-in">
     <h2>Method Overview</h2>
     <p>
       The system parses unstructured resumes, predicts job titles, extracts skills, and ranks candidates using deep learning.
@@ -176,7 +223,7 @@
     <img class="half-size" src="https://raw.githubusercontent.com/Ganomanut/junubinTech_website1/main/Overview.png" alt="Method Overview">
   </section>
 
-  <section>
+  <section class="slide-in">
     <h2>Key Features</h2>
     <ul>
       <li>Resume Parsing</li>
@@ -187,7 +234,7 @@
     </ul>
   </section>
 
-  <section>
+  <section class="slide-in">
     <h2>Information Extracted</h2>
     <ul>
       <li>Job Title</li>
@@ -199,18 +246,15 @@
     </ul>
   </section>
 
-  <section>
+  <section class="slide-in">
     <h2>Visualizations</h2>
     <h3>Match Score Visualization</h3>
-    <p>This chart shows how well a resume aligns with job roles using multiple metrics.</p>
     <img class="half-size" src="https://raw.githubusercontent.com/Ganomanut/junubinTech_website1/main/visualscore.png" alt="Match Score Visualization">
-
     <h3>Resume Parsing Output</h3>
-    <p>The parsed resume shows extracted job titles, skills, and experiences used for AI matching.</p>
     <img class="half-size" src="extraction.jpg" alt="Resume Parsing Demo">
   </section>
 
-  <section>
+  <section class="slide-in">
     <h2>Resources</h2>
     <ul>
       <li><a href="https://drive.google.com/drive/folders/12jgwkMWQ4Ulmj6DOS3rfR-LDWQpCVo1l" target="_blank">Google Drive</a></li>
@@ -219,14 +263,13 @@
     </ul>
   </section>
 
-  <section>
+  <section class="slide-in">
     <h2>Video Demonstration</h2>
-    <p>Watch how the AI system parses and analyzes resumes in real time.
-    This video showcases a complete walkthrough of the AI-Powered Resume Analyzer, including resume upload, automatic extraction of structured data (such as skills and job titles), and real-time prediction of the candidate's specialization using Machine Learning.</p>
+    <p>This video showcases a complete walkthrough of the AI-Powered Resume Analyzer including resume upload, automatic extraction of structured data, and job specialization prediction.</p>
     <iframe class="square" src="https://drive.google.com/file/d/1TdBnnIirRkkvSvEj5E4llKPnNI0k6uKV/preview" allow="autoplay"></iframe>
   </section>
 
-  <section>
+  <section class="slide-in">
     <h2>Citation</h2>
     <pre><code>@misc{gano2025resumeanalyzer,
   title={AI-Powered Resume Analyzer},
@@ -240,13 +283,8 @@
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
       <div>
         <h3>Contact Us</h3>
-        <p>• James Dut Mathok</p>
-        <p>Email: <a href="mailto:jamesdutmathok@gmail.com">jamesdutmathok@gmail.com</a></p>
-        <p>Phone: +211 924519185</p>
-        <br>
-        <p>• Agar Marial Riek</p>
-        <p>Email: <a href="mailto:agarmarial2018@gmail.com">agarmarial2018@gmail.com</a></p>
-        <p>Phone: +211 922782228</p>
+        <p>• James Dut Mathok <br>Email: <a href="mailto:jamesdutmathok@gmail.com">jamesdutmathok@gmail.com</a><br>Phone: +211 924519185</p>
+        <p>• Agar Marial Riek <br>Email: <a href="mailto:agarmarial2018@gmail.com">agarmarial2018@gmail.com</a><br>Phone: +211 922782228</p>
         <p>University of Juba, School of CS & IT</p>
       </div>
       <div>
@@ -264,5 +302,20 @@
     <hr />
     <p style="text-align: center;">&copy; 2025 University of Juba. Developed by Final Year CS & IT Students.</p>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.slide-in').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
